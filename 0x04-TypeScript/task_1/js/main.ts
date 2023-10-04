@@ -26,9 +26,19 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
-console.log(director1);
 
-class StudentClass {
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework: () => string;
+  displayName: () => string;
+}
+
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
 
