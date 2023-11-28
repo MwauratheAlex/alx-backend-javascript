@@ -29,7 +29,7 @@ const countStudents = (path) => {
     const firstnames = fieldFirstNames[field].join(', ');
     const noStudents = fieldFirstNames[field].length;
     console.log(
-      `Number of students in ${field}: ${noStudents}. List: ${firstnames}`
+      `Number of students in ${field}: ${noStudents}. List: ${firstnames}`,
     );
   }
 };
