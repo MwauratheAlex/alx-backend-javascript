@@ -17,7 +17,7 @@ const countStudents = (path) => {
 
   const fieldFirstNames = {};
 
-  for (let i = 1; i < students.length; i++) {
+  for (let i = 1; i < students.length; i += 1) {
     const studentData = students[i].split(',');
     const field = studentData[studentData.length - 1];
     const firstname = studentData[0];
