@@ -26,7 +26,8 @@ function countStudents(path) {
           const studentList = studentsInField.join(', ');
           studentReport += `Number of students in ${field}: ${noStudentsInFeild}. List: ${studentList}\n`;
         }
-        console.log(studentReport);
+        studentReport = studentReport.slice(0, studentReport.length - 1);
+        console.log(studentReport)
         resolve(studentReport);
       }
     });
