@@ -21,7 +21,7 @@ const requestHandler = (req, res) => {
         res.end(`${title}${report}`);
       })
       .catch((err) => {
-        res.end(`${title}${err.toString()}`);
+        res.end(`${title}${err instanceof Error ? err.message : err.toString()}`);
       });
     return;
   }
