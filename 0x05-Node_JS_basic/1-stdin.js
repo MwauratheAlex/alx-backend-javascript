@@ -1,11 +1,11 @@
 console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('readable', () => {
-  const chunk = process.stdin.read();
-  if (chunk !== null) {
-    process.stdout.write('Your name is: ' + chunk);
+  const name = process.stdin.read();
+  if (name !== null) {
+    process.stdout.write(`Your name is: ${name}`);
   }
-})
+});
 
 process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
