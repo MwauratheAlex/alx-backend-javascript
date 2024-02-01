@@ -1,10 +1,10 @@
-const appController = require('../controllers/AppController');
-const studentController = require('../controllers/StudentController');
+import AppController from '../controllers/AppController';
+import StudentController from '../controllers/StudentController';
 
 function mapRoutes(app) {
-  app.get('/', appController.getHomepage);
-  app.get('/students', studentController.getAllStudents);
-  app.get('/students/*', studentController.getAllStudentsByMajor);
+  app.get('/', AppController.getHomepage);
+  app.get('/students', StudentController.getAllStudents);
+  app.get('/students/*', StudentController.getAllStudentsByMajor);
 }
 
-module.exports = mapRoutes;
+export default mapRoutes;

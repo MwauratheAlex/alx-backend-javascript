@@ -1,5 +1,5 @@
-const express = require('express');
-const mapRoutes = require('./routes/index');
+import express from 'express';
+import mapRoutes from './routes/index';
 
 const port = 1245;
 const app = express();
@@ -9,4 +9,4 @@ app.listen(port, () => {
   console.log(`App listening on http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
