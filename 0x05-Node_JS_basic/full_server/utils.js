@@ -5,6 +5,7 @@ function readDatabase(path) {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
+        return;
       }
       const students = data.trim().split('\n');
       const fieldStudents = {};
