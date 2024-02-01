@@ -8,10 +8,10 @@ function countStudents(path) {
       }
       if (data) {
         const students = data.trim().split('\n');
-        let studentReport = '';
-        studentReport += `Number of students: ${students.length - 1}`;
-        console.log(studentReport);
-        studentReport += '\n';
+        const studentReport = [];
+        let message = `Number of students: ${students.length - 1}`;
+        console.log(message);
+        studentReport.push(message);
         const fieldStudents = {};
         for (let i = 1; i < students.length; i += 1) {
           const studentData = students[i].trim().split(',');
@@ -26,11 +26,11 @@ function countStudents(path) {
           const studentsInField = fieldStudents[field];
           const noStudentsInFeild = studentsInField.length;
           const studentList = studentsInField.join(', ');
-          const out = `Number of students in ${field}: ${noStudentsInFeild}. List: ${studentList}`;
-          console.log(out);
-          studentReport += out;
+          message = `Number of students in ${field}: ${noStudentsInFeild}. List: ${studentList}`;
+          console.log(message);
+          studentReport.push(message);
         }
-        resolve(studentReport);
+        resolve(studentReport.join('\n'));
       }
     });
   });

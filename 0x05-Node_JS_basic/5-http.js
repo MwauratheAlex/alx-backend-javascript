@@ -15,8 +15,8 @@ const requestHandler = (req, res) => {
     } else if (url === '/students') {
         const resData = 'This is the list of our students\n';
         countStudents(databaseFile)
-          .then((data) => {
-            console.log(data)
+          .then((report) => {
+            console.log(report);
             res.end(resData);
             return;
           })
