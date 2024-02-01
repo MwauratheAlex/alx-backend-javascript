@@ -1,4 +1,4 @@
-const http = require('node:http');
+const http = require('http');
 
 const hostname = 'localhost';
 const port = 1245;
