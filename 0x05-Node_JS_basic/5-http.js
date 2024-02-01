@@ -13,14 +13,15 @@ const requestHandler = (req, res) => {
   if (url === '/') {
     res.end('Hello Holberton School!');
     return;
-  } if (url === '/students') {
+  }
+  if (url === '/students') {
     const title = 'This is the list of our students\n';
     countStudents(databaseFile)
       .then((report) => {
         res.end(`${title}${report}`);
       })
       .catch((err) => {
-        res.end(err.toString());
+        res.end(`${title}${err.toString()}`);
       });
     return;
   }
