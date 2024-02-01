@@ -3,12 +3,21 @@ import readDatabase from '../utils';
 class StudentController {
   static getAllStudents(_, res) {
     const databaseFile = process.argv.length > 2 ? process.argv[2] : '';
+    const cmpFxn = (a, b) => {
+      if (a[0].toLowerCase() < b[0].toLowerCase()) {
+        return -1;
+      }
+      if (a[0].toLowerCase() > b[0].toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    };
 
     const title = 'This is the list of our students';
     readDatabase(databaseFile)
       .then((studentData) => {
         let studentDataString = '';
-        for (const field of Object.keys(studentData).sort()) {
+        for (const field of Object.keys(studentData).sort(cmpFxn)) {
           const noStudents = studentData[field].length;
           const studentList = studentData[field].join(', ');
           studentDataString
