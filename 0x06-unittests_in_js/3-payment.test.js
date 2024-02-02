@@ -8,5 +8,6 @@ describe('sendPaymentRequestToApi', () => {
     const UtilsSpy = sinon.spy(Utils);
     sendPaymentRequestToApi(100, 20);
     expect(UtilsSpy.calculateNumber.calledOnceWith('SUM', 100, 20)).true;
+    UtilsSpy.calculateNumber.restore();
   });
 });
