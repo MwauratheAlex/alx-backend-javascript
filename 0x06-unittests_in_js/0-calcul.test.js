@@ -5,14 +5,20 @@ describe('calculateNumber', () => {
   it('whole numbers', () => {
     assert.equal(calculateNumber(1, 3), 4);
   });
-  it('decimal and whole number (rounding)', () => {
+  it('second number rounded up', () => {
     assert.equal(calculateNumber(1, 3.7), 5);
   });
-  it('two decimal (rounding)', () => {
+  it('second number rounded down', () => {
+    assert.equal(calculateNumber(1, 3.2), 4);
+  });
+  it('first number rounded down, second number rounded up', () => {
     assert.equal(calculateNumber(1.2, 3.7), 5);
   });
-  it('two decimal (ceil)', () => {
+  it('both numbers rounded up', () => {
     assert.equal(calculateNumber(1.5, 3.7), 6);
+  });
+  it('both numbers rounded down', () => {
+    assert.equal(calculateNumber(1.3, 3.3), 4);
   });
 })
 
