@@ -1,5 +1,5 @@
-const calculateNumber = require('./0-calcul.js');
-const assert = require('assert');
+import calculateNumber from './0-calcul.js';
+import assert from 'assert';
 
 describe('calculateNumber', () => {
   it('whole numbers', () => {
