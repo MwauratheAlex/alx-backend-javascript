@@ -1,5 +1,5 @@
-import calculateNumber from './2-calcul_chai.js';
-import { expect }  from 'chai';
+const { expect } = require('chai');
+const calculateNumber = require('./2-calcul_chai.js');
 
 describe('1-calcul', () => {
   it('sum whole numbers', () => {
@@ -15,5 +15,3 @@ describe('1-calcul', () => {
     expect(calculateNumber('DIVIDE', 4, 0.4)).to.equal('Error');
   });
 });
-
-export default describe;
