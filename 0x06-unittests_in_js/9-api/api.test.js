@@ -14,7 +14,7 @@ describe('Payment system api', () => {
     const id = 777;
     request.get(`${url}/cart/${id}`, (err, res, body) => {
        expect(res.statusCode).equal(200);
-       expect(res.body).eq(`Payment methods for cart ${id}`);
+       expect(res.body).eq('Payment methods for cart 777');
     });
     done();
   });
