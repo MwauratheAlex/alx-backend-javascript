@@ -13,7 +13,7 @@ describe('Payment system api', () => {
   it('GET /cart/:id returns "Payment methods for cart :id"', (done) => {
     request.get(`${url}/cart/777`, (err, res, body) => {
        expect(res.statusCode).equal(200);
-       expect(res.body).eq('Payment methods for cart 777');
+       expect(res.body).equal('Payment methods for cart 777');
     });
     done();
   });
