@@ -18,4 +18,18 @@ describe('Payment system api', () => {
     });
     done();
   });
+  it('GET /cart/:id returns 404 error when id is negative', (done) => {
+    const id = -777;
+    request.get(`${url}/cart/${id}`, (err, res, body) => {
+       expect(res.statusCode).equal(404);
+    });
+    done();
+  });
+  it('GET /cart/:id returns returns 404 error when id is not number', (done) => {
+    const id = "mbugua";
+    request.get(`${url}/cart/${id}`, (err, res, body) => {
+       expect(res.statusCode).equal(404);
+    });
+    done();
+  });
 });
