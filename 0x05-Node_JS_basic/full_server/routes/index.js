@@ -1,10 +1,10 @@
 import AppController from '../controllers/AppController';
-import StudentController from '../controllers/StudentController';
+import StudentsController from '../controllers/StudentsController';
 
 function mapRoutes(app) {
   app.get('/', AppController.getHomepage);
-  app.get('/students', StudentController.getAllStudents);
-  app.get('/students/*', StudentController.getAllStudentsByMajor);
+  app.get('/students', StudentsController.getAllStudents);
+  app.get('/students/*', StudentsController.getAllStudentsByMajor);
 }
 
 export default mapRoutes;
