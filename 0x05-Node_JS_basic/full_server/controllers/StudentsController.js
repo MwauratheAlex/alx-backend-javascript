@@ -1,6 +1,6 @@
 import readDatabase from '../utils';
 
-class StudentController {
+class StudentsController {
   static getAllStudents(_, res) {
     const databaseFile = process.argv.length > 2 ? process.argv[2] : '';
     const cmpFxn = (a, b) => {
@@ -51,4 +51,4 @@ class StudentController {
   }
 }
 
-export default StudentController;
+export default StudentsController;
