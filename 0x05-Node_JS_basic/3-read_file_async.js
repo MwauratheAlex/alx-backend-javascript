@@ -5,6 +5,7 @@ async function countStudents(path) {
     fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
       if (err || !data) {
         reject(new Error('Cannot load the database'));
+        return;
       }
 
       const students = data.trim().split('\n');
