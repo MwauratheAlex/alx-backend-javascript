@@ -11,12 +11,12 @@ const app = http.createServer(async (req, res) => {
     res.write('Hello Holberton School!');
   } else if (url === '/students') {
     const msgTitle = 'This is the list of our students\n';
-    await countStudents('database.csv')
+    await countStudents('databse.csv')
       .then((students) => {
         res.write(`${msgTitle}${students}`);
       })
       .catch((err) => {
-        res.write(`${msgTitle}${String(err)}`);
+        res.write(`${msgTitle}${err.message}`);
       });
   }
   res.end();
