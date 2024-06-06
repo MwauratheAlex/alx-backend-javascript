@@ -5,6 +5,7 @@ async function readDatabase(path) {
     fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
       if (err || !data) {
         reject(new Error('Error reading file'));
+        return;
       }
       const students = data.trim().split('\n');
       const studentObject = {};
