@@ -20,14 +20,16 @@ async function countStudents(path) {
 
       let out = '';
       out += `Number of students: ${students.length - 1}`;
+      console.log(`Number of students: ${students.length - 1}`);
 
       Object.keys(studentField).forEach((field) => {
         const l = studentField[field].join(', ');
         const noStudents = studentField[field].length;
         out += `\nNumber of students in ${field}: ${noStudents}. List: ${l}`;
+        console.log(
+          `Number of students in ${field}: ${noStudents}. List: ${l}`,
+        );
       });
-
-      console.log(out);
 
       resolve(out);
     });
