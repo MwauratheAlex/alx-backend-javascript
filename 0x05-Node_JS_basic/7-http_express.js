@@ -14,13 +14,14 @@ app.get('/', (_, res) => {
 });
 
 app.get('/students', async (_, res) => {
-  res.write('This is the list of our students\n');
+  const title = 'This is the list of our students\n';
+
   await countStudents(db)
     .then((students) => {
-      res.send(students);
+      res.send(`${title}${students}`);
     })
     .catch((err) => {
-      res.send(`${err.message}`);
+      res.send(`${title}${err.message}`);
     });
 });
 
