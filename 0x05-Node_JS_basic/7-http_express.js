@@ -10,23 +10,18 @@ app.listen(port, () => {
 });
 
 app.get('/', (_, res) => {
-  res.setHeader('Content-Type', 'plain/text');
-  res.write('Hello Holberton School!');
-  res.end();
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', async (_, res) => {
-  res.setHeader('Content-Type', 'plain/text');
   res.write('This is the list of our students\n');
   await countStudents(db)
     .then((students) => {
-      res.write(students);
+      res.send(students);
     })
     .catch((err) => {
-      res.write(`${err.message}`);
+      res.send(`${err.message}`);
     });
-
-  res.end();
 });
 
 module.exports = app;
