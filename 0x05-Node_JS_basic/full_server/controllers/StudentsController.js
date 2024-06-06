@@ -8,7 +8,7 @@ class StudentsController {
   * @param {express.Response} res
   */
   static async getAllStudents(_, res) {
-    const db = process.argv[2];
+    const db = process.argv.length > 2 ? process.argv[2] : '';
     await readDatabase(db)
       .then((data) => {
         let message = 'This is the list of our students';
@@ -31,7 +31,7 @@ class StudentsController {
   * @param {express.Response} res
   */
   static async getAllStudentsByMajor(req, res) {
-    const db = process.argv[2];
+    const db = process.argv.length > 2 ? process.argv[2] : '';
     const { major } = req.params;
 
     const acceptedMajors = ['CS', 'SWE'];
