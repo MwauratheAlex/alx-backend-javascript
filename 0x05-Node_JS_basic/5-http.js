@@ -1,6 +1,8 @@
 const http = require('http');
 const countStudents = require('./3-read_file_async');
 
+const db = process.argv[2];
+
 const port = 1245;
 
 const app = http.createServer(async (req, res) => {
@@ -11,7 +13,7 @@ const app = http.createServer(async (req, res) => {
     res.write('Hello Holberton School!');
   } else if (url === '/students') {
     const msgTitle = 'This is the list of our students\n';
-    await countStudents('databse.csv')
+    await countStudents(db)
       .then((students) => {
         res.write(`${msgTitle}${students}`);
       })
