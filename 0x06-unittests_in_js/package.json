@@ -1,8 +1,9 @@
 {
-  "devDependencies": {
-    "mocha": "^10.4.0"
-  },
   "scripts": {
-  "test": "mocha ."
-}
+    "test": "mocha ."
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^10.4.0"
+  }
 }
