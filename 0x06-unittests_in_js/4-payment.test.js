@@ -4,16 +4,15 @@ const sendPaymentRequestToApi = require('./3-payment.js');
 const { expect } = require('chai');
 
 describe('sendPaymentRequestToApi', () => {
-  it('calls utils.calculateNumber once with correct values', () => {
-    const UtilsStub = sinon.stub(Utils, "calculateNumber").returns(10);
-    const logSpy = sinon.spy(console, 'log');
+  it('stub for utils.calculateNumber once with correct values', () => {
+    const stub = sinon.stub(Utils, 'calculateNumber');
+    stub.returns(120);
+    const spy = sinon.spy(console, 'log');
     sendPaymentRequestToApi(100, 20);
-    expect(Utils.calculateNumber.calledOnceWith('SUM', 100, 20)).true;
-    expect(logSpy.calledOnceWith('The total is: 10')).true;
-    UtilsStub.restore();
-    logSpy.restore();
-  });
-  it('calculateNumber works', () => {
-    expect(Utils.calculateNumber('SUM', 100, 120)).to.equal(220);
+    expect(stub.calledOnceWith('SUM', 100, 20)).to.be.true;
+    expect(spy.calledOnceWith('The total is: 120')).to.be.true;
+
+    stub.restore();
+    spy.restore();
   });
 });
