@@ -8,7 +8,6 @@ describe('sendPaymentRequestToApi', () => {
     const stub = sinon.stub(Utils, 'calculateNumber').returns(10);
     const spy = sinon.spy(console, 'log');
     sendPaymentRequestToApi(100, 20);
-    expect(stub.calledOnceWith('SUM', 100, 20)).to.be.true;
     expect(Utils.calculateNumber.calledOnceWith('SUM', 100, 20)).to.be.true;
     expect(spy.calledOnceWith('The total is: 10')).to.be.true;
     stub.restore();
