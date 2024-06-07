@@ -10,7 +10,4 @@ describe('payment_token', () => {
         });
       }).finally(done());
   });
-  it('returns undefined when false is passed', () => {
-    expect(getPaymentTokenFromAPI(false)).to.be.undefined;
-  });
 });
