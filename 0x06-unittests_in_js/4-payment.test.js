@@ -7,7 +7,7 @@ describe('sendPaymentRequestToApi', () => {
   it('stub for utils.calculateNumber once with correct values', () => {
     const stub = sinon.stub(Utils, 'calculateNumber');
     const spy = sinon.spy(console, 'log');
-    stub.callsFake((a, b, c) => 10);
+    stub.callsFake((a, b) => 10);
     sendPaymentRequestToApi(100, 20);
     expect(stub.calledOnceWith('SUM', 100, 20)).to.be.true;
     expect(spy.calledOnceWith('The total is: 10')).to.be.true;
