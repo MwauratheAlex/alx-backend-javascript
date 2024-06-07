@@ -14,6 +14,6 @@ describe('sendPaymentRequestToApi', () => {
     logSpy.restore();
   });
   it('calculateNumber works', () => {
-    expect(Utils.calculateNumber('SUM', 100, 120)).to.equal(520);
+    expect(Utils.calculateNumber('SUM', 100, 120)).to.equal(220);
   });
 });
