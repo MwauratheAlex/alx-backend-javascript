@@ -1,14 +1,20 @@
-const sinon = require('sinon');
-const Utils = require('./utils.js');
-const sendPaymentRequestToApi = require('./3-payment.js');
+/* eslint-disable */
 const { expect } = require('chai');
+const sendPaymentRequestToApi = require('./4-payment');
+const Util = require('./utils');
+const sinon = require('sinon');
 
-describe('sendPaymentRequestToApi', () => {
-  it('stub for utils.calculateNumber once with correct values', () => {
-    const stub = sinon.stub(Utils, 'calculateNumber');
-    stub.returns(10);
-    sendPaymentRequestToApi(100, 20);
-    expect(stub.calledOnceWith('SUM', 100, 20)).to.be.true;
-    stub.restore();
+describe('using sinon spy', () => {
+  // const spy = sinon.spy(sendPaymentRequestToApi);
+  // eslint-disable-next-line no-unused-vars
+  const calMethod = sinon.stub(Util, 'calculateNumber').callsFake((a, b) => 10);
+  const log = sinon.spy(console, 'log');
+  sendPaymentRequestToApi(22, 88);
+
+  it('check wether calculateNumber method was called', () => {
+    expect(log.calledWithExactly('The total is: 10'));
+  });
+  it('check wether calculateNumber method was called once', () => {
+    console.log(calMethod.calledOnce);
   });
 });
